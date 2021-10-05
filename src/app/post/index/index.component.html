@@ -1,0 +1,27 @@
+<div class="container">
+    <h1>Assessment Frontend</h1>
+  
+    <a href="#" routerLink="/post/create/" class="btn btn-success">Create New Post</a>
+    <p></p>
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+      <tr>
+        <th>ID</th>
+        <th>user_id</th>
+        <th>Title</th>
+        <th>Body</th>
+        <th width="220px">Action</th>
+      </tr>
+    </thead>
+      <tr *ngFor="let post of posts">
+        <td>{{ post.id }}</td>
+        <td>{{ post.user_id }}</td>
+        <td>{{ post.title }}</td>
+        <td>{{ post.body }}</td>
+        <td>
+          <a href="#" [routerLink]="['/post/', post.id, 'view']" class="btn btn-info">View</a>
+          <a href="#" [routerLink]="['/post/', post.id, 'edit']" class="btn btn-primary">Edit</a>
+        </td>
+      </tr>
+    </table>
+ </div>
